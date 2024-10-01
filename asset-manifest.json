@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/saxon_fasion/static/css/main.c527219c.css",
+    "main.js": "/saxon_fasion/static/js/main.bbbde320.js",
+    "static/media/mens2.jpg": "/saxon_fasion/static/media/mens2.6d40d3a564b91a3d4863.jpg",
+    "static/media/w2.jpg": "/saxon_fasion/static/media/w2.dd9f15b0aacbb2fd2036.jpg",
+    "static/media/w1.jpg": "/saxon_fasion/static/media/w1.6a2e3db0a3445f39ca58.jpg",
+    "static/media/w3.jpg": "/saxon_fasion/static/media/w3.b4df66e533a9432c326e.jpg",
+    "static/media/mens1.jpg": "/saxon_fasion/static/media/mens1.fa164ae9781a633cb0c8.jpg",
+    "static/media/mens3.jpg": "/saxon_fasion/static/media/mens3.f83736253baf7c22aec4.jpg",
+    "static/media/mens4.jpg": "/saxon_fasion/static/media/mens4.e38ea327e7ace456be9e.jpg",
+    "static/media/slide1.jpg": "/saxon_fasion/static/media/slide1.64bd9834ac20db688a71.jpg",
+    "static/media/men.jpg": "/saxon_fasion/static/media/men.25b5464ee49325bb5f53.jpg",
+    "static/media/slide6.jpg": "/saxon_fasion/static/media/slide6.c1b02b850c43f60fb274.jpg",
+    "static/media/w4.jpg": "/saxon_fasion/static/media/w4.980ee1eda0b24e3a8a5e.jpg",
+    "static/media/women.jpg": "/saxon_fasion/static/media/women.4f65dd276255641041f8.jpg",
+    "static/media/playfair-display-latin-400-normal.woff": "/saxon_fasion/static/media/playfair-display-latin-400-normal.9c7c1543d792cb6bb2b2.woff",
+    "static/media/playfair-display-latin-400-normal.woff2": "/saxon_fasion/static/media/playfair-display-latin-400-normal.01127cbe42de896f8511.woff2",
+    "static/media/playfair-display-latin-ext-400-normal.woff": "/saxon_fasion/static/media/playfair-display-latin-ext-400-normal.9ea2943ecdca370550c2.woff",
+    "static/media/playfair-display-cyrillic-400-normal.woff": "/saxon_fasion/static/media/playfair-display-cyrillic-400-normal.e8f79ad5a76821f7165f.woff",
+    "static/media/playfair-display-latin-ext-400-normal.woff2": "/saxon_fasion/static/media/playfair-display-latin-ext-400-normal.ec5b9e3c4c997f6bac35.woff2",
+    "static/media/playfair-display-cyrillic-400-normal.woff2": "/saxon_fasion/static/media/playfair-display-cyrillic-400-normal.3dc94a1021075fd54b85.woff2",
+    "static/media/logo1.png": "/saxon_fasion/static/media/logo1.0067f27ba77eff3d57ad.png",
+    "static/media/playfair-display-vietnamese-400-normal.woff": "/saxon_fasion/static/media/playfair-display-vietnamese-400-normal.40221529e528ff3e5a46.woff",
+    "static/media/playfair-display-vietnamese-400-normal.woff2": "/saxon_fasion/static/media/playfair-display-vietnamese-400-normal.5c877b3fa47066dbb461.woff2",
+    "index.html": "/saxon_fasion/index.html",
+    "main.c527219c.css.map": "/saxon_fasion/static/css/main.c527219c.css.map",
+    "main.bbbde320.js.map": "/saxon_fasion/static/js/main.bbbde320.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c527219c.css",
+    "static/js/main.bbbde320.js"
+  ]
+}
