@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -8,13 +8,50 @@ import {
   Avatar,
   Box,
   InputBase,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import logo from "../assets/logo1.png"; //
+import logo from "../assets/logo1.png";
 
 const TopAppBar = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
+  const navigationItems = ["Home", "Products", "Contact Us"];
+
+  const drawer = (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        {navigationItems.map((text) => (
+          <ListItem button key={text}>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
     <>
       <AppBar
@@ -32,70 +69,90 @@ const TopAppBar = () => {
             padding: "0 16px",
           }}
         >
+          {/* Mobile Menu Icon */}
+          {isMobile && (
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
+
           {/* Logo Image */}
           <Box>
             <img
               src={logo}
               alt="Logo"
-              style={{ height: "70px", width: "auto", borderRadius: "15px" }}
+              style={{ 
+                height: isMobile ? "50px" : "70px", 
+                width: "auto", 
+                borderRadius: "15px" 
+              }}
             />
           </Box>
 
-          {/* Navigation Buttons */}
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            {["Home", "Products", "Contact Us"].map((text, index) => (
-              <React.Fragment key={text}>
-                <Button
-                  sx={{
-                    color: "black",
-                    backgroundColor: "transparent",
-                    padding: "0.5rem 1rem",
-                    boxShadow: "none",
-                    "&:hover": {
-                      backgroundColor: "grey.100",
-                    },
-                  }}
-                >
-                  {text}
-                </Button>
-                {index < 2 && (
-                  <span
-                    style={{
-                      margin: "0 8px",
-                      height: "24px",
-                      borderLeft: "1px solid black",
+          {/* Navigation Buttons - Only show on desktop */}
+          {!isMobile && (
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              {navigationItems.map((text, index) => (
+                <React.Fragment key={text}>
+                  <Button
+                    sx={{
+                      color: "black",
+                      backgroundColor: "transparent",
+                      padding: "0.5rem 1rem",
+                      boxShadow: "none",
+                      "&:hover": {
+                        backgroundColor: "grey.100",
+                      },
                     }}
-                  />
-                )}
-              </React.Fragment>
-            ))}
-          </Box>
+                  >
+                    {text}
+                  </Button>
+                  {index < navigationItems.length - 1 && (
+                    <span
+                      style={{
+                        margin: "0 8px",
+                        height: "24px",
+                        borderLeft: "1px solid black",
+                      }}
+                    />
+                  )}
+                </React.Fragment>
+              ))}
+            </Box>
+          )}
 
-          {/* Search Input */}
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              bgcolor: "grey.100",
-              borderRadius: "20px",
-              padding: "4px 8px",
-            }}
-          >
-            <InputBase placeholder="Search..." sx={{ ml: 1, flex: 1 }} />
-            <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
-              <SearchIcon />
-            </IconButton>
-          </Box>
+          {/* Search Input - Only show on desktop */}
+          {!isMobile && (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                bgcolor: "grey.100",
+                borderRadius: "20px",
+                padding: "4px 8px",
+              }}
+            >
+              <InputBase placeholder="Search..." sx={{ ml: 1, flex: 1 }} />
+              <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+                <SearchIcon />
+              </IconButton>
+            </Box>
+          )}
 
           {/* User Section with Favorite and Cart Icons */}
-          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: isMobile ? 1 : 2 }}>
             <IconButton color="inherit">
               <FavoriteIcon />
             </IconButton>
             <IconButton color="inherit">
               <ShoppingCartIcon />
             </IconButton>
-            <Avatar sx={{ bgcolor: "grey.500" }}>U</Avatar>
+            {!isMobile && <Avatar sx={{ bgcolor: "grey.500" }}>U</Avatar>}
             <Button
               variant="contained"
               sx={{
@@ -103,7 +160,8 @@ const TopAppBar = () => {
                 color: "white",
                 boxShadow: 2,
                 borderRadius: "50px",
-                padding: "0.5rem 1.5rem",
+                padding: isMobile ? "0.3rem 1rem" : "0.5rem 1.5rem",
+                fontSize: isMobile ? "0.8rem" : "1rem",
                 "&:hover": {
                   bgcolor: "grey.900",
                   boxShadow: 3,
@@ -116,20 +174,14 @@ const TopAppBar = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Banner Image */}
-      {/* <Box
-        sx={{
-          width: "100%", // Adjust as per your layout preference
-          height: "500px", // Adjust this value to your preferred banner height
-          backgroundImage: `url(${bannerImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderTop: "2vh",
-          display: "flex", // Enable flexbox
-          justifyContent: "center", // Center horizontally
-          alignItems: "center", // Adds space between the navbar and banner, and centers horizontally
-        }}
-      /> */}
+      {/* Drawer for mobile navigation */}
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+      >
+        {drawer}
+      </Drawer>
     </>
   );
 };

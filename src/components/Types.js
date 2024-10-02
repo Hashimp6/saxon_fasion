@@ -37,7 +37,6 @@ const AnimatedCollectionBanner = () => {
         sx={{
           display: "flex",
           justifyContent: "space-around",
-          height: "500px",
         }}
       >
         <Box
@@ -74,13 +73,13 @@ const AnimatedCollectionBanner = () => {
           transition={{ duration: 1, delay: 1 }}
           sx={{
             width: "40%",
-            height: "80%",
+            height: "60%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <Typography variant="h5" sx={{ mb: 2, p: 2 }}>
+          <Typography variant="h5" sx={{ mb: 2, }}>
             Women
           </Typography>
           <Box
