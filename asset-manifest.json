@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/saxon_fasion/static/css/main.c527219c.css",
-    "main.js": "/saxon_fasion/static/js/main.bbbde320.js",
+    "main.js": "/saxon_fasion/static/js/main.ec5aa7c1.js",
     "static/media/mens2.jpg": "/saxon_fasion/static/media/mens2.6d40d3a564b91a3d4863.jpg",
     "static/media/w2.jpg": "/saxon_fasion/static/media/w2.dd9f15b0aacbb2fd2036.jpg",
     "static/media/w1.jpg": "/saxon_fasion/static/media/w1.6a2e3db0a3445f39ca58.jpg",
@@ -25,10 +25,10 @@
     "static/media/playfair-display-vietnamese-400-normal.woff2": "/saxon_fasion/static/media/playfair-display-vietnamese-400-normal.5c877b3fa47066dbb461.woff2",
     "index.html": "/saxon_fasion/index.html",
     "main.c527219c.css.map": "/saxon_fasion/static/css/main.c527219c.css.map",
-    "main.bbbde320.js.map": "/saxon_fasion/static/js/main.bbbde320.js.map"
+    "main.ec5aa7c1.js.map": "/saxon_fasion/static/js/main.ec5aa7c1.js.map"
   },
   "entrypoints": [
     "static/css/main.c527219c.css",
-    "static/js/main.bbbde320.js"
+    "static/js/main.ec5aa7c1.js"
   ]
 }
