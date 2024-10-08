@@ -1,0 +1,23 @@
+# render.yaml
+services:
+  - type: web
+    name: saxon-fashion
+    buildCommand: npm ci && npm run build
+    startCommand: npm run serve
+    envVars:
+      - key: NODE_VERSION
+        value: 16
+    staticPublishPath: ./build  # or ./dist depending on your build output
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
+      - path: /static/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /static/js/*
+        name: Content-Type
+        value: application/javascript
+      - path: /static/css/*
+        name: Content-Type
+        value: text/css

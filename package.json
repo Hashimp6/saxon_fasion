@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Hashimp6.github.io/saxon_fasion",
+  "homepage": "https://hashimp6.github.io/saxon_fasion/",
   "name": "my-sample-app",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +22,8 @@
     "start": "react-scripts start",
     "predeploy":"npm run build",
     "deploy":"gh-pages -d build",
-    "build": "react-scripts build",
+      "build": "react-scripts build",
+    "serve": "serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
